@@ -3,16 +3,16 @@ include 'koneksi.php';
 $tanggal = $_POST['tanggal'];
 $tanggal = date('Y-m-d', strtotime($tanggal));
 
-$lima_mnt = $_POST['lima_mnt'];
-$sepuluh_mnt = $_POST['sepuluh_mnt'];
-$limabelas_mnt = $_POST['limabelas_mnt'];
-$tigapuluh_mnt = $_POST['tigapuluh_mnt'];
-$empatlima_mnt = $_POST['empatlima_mnt'];
-$enampuluh_mnt = $_POST['enampuluh_mnt'];
+$lima = $_POST['lima'];
+$sepuluh = $_POST['sepuluh'];
+$limabelas = $_POST['limabelas'];
+$tigapuluh = $_POST['tigapuluh'];
+$empatlima = $_POST['empatlima'];
+$enampuluh = $_POST['enampuluh'];
 $seratusduapuluh = $_POST['seratusduapuluh'];
-$tiga_jm = $_POST['tiga_jm'];
-$enam_jm = $_POST['enam_jm'];
-$duabelas_jm = $_POST['duabelas_jm'];
+$tigajam = $_POST['tigajam'];
+$enamjam = $_POST['enamjam'];
+$duabelasjam = $_POST['duabelasjam'];
 $tujuh = $_POST['tujuh'];
 $delapan = $_POST['delapan'];
 $sembilan = $_POST['sembilan'];
@@ -38,13 +38,14 @@ $empat = $_POST['empat'];
 $lima = $_POST['lima'];
 $enam = $_POST['enam'];
  
-$sql = "INSERT INTO data_hujan VALUES('','$tanggal','$lima_mnt','$sepuluh_mnt','$limabelas_mnt','$tigapuluh_mnt'
-,'$empatlima_mnt','$enampuluh_mnt','$seratusduapuluh','$tiga_jm','$enam_jm','$duabelas_jm'
-,'$tujuh','$delapan','$sembilan','$sepuluh','$sebelas','$duabelas','$tigabelas','$empatbelas','$limabelas','$enambelas'
-,'$tujuhbelas','$delapanbelas','$sembilanbelas','$duapuluh','$duasatu','$duadua','$duatiga'
-,'$duaempat','$satu','$dua','$tiga','$empat','$lima','$enam')";
-
-mysqli_query($conn,$sql);
+$sql1 = "INSERT INTO hujanperjam VALUES('','$tanggal','$tujuh','$delapan','$sembilan','$sepuluh'
+,'$sebelas','$duabelas','$tigabelas','$empatbelas','$limabelas','$enambelas','$tujuhbelas','$delapanbelas'
+,'$sembilanbelas','$duapuluh','$duasatu','$duadua','$duatiga','$duaempat','$satu','$dua','$tiga'
+,'$empat','$lima','$enam')";
+$sql2 = "INSERT INTO hujan VALUES('','$tanggal','$lima','$sepuluh','$limabelas','$tigapuluh'
+,'$empatlima','$enampuluh','$seratusduapuluh','$tigajam','$enamjam','$duabelasjam')";
+mysqli_query($conn,$sql1);
+mysqli_query($conn,$sql2);
  
 header("location:data-hujan-all.php?pesan=input");
 ?>
