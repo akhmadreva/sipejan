@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Membuat CRUD Dengan PHP Dan MySQL - Menampilkan data dari database</title>
+	<title>Penakar Hujan Hellman</title>
 	<link rel="stylesheet" type="text/css" href="style.css">
 	<link rel="stylesheet" href="http://code.jquery.com/ ui/ 1.10.3/ themes/ smoothness/ jquery-ui.css" type="text/css" />
 
@@ -10,13 +10,6 @@
 	<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
 	<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
 
-	<script>
-	$( function() {
-		$( "#date" ).datepicker({
-		dateFormat: "yy-mm-dd"
-		});
-	} );
-	</script>
 </head>
 <body>
 	<div class="judul">		
@@ -36,8 +29,8 @@
 				<td>Intensitas Hujan</td>					
 			</tr>
 			<tr>
-			  	<td><label >Tanggal</label></td>
-  				<td><input type="text" id="date" name="tanggal"></td>
+				<td><label for="tanggal">Tanggal mulai </label></td>
+        		<td><input type="date" name="tanggal" id="date" class="form-control mr-2"></td>
 			</tr>
             <tr>
 				<td>5 Menit</td>
