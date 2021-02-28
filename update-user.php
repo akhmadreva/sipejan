@@ -8,7 +8,7 @@ $jabatan = $_POST['jabatan'];
 $email = $_POST['email'];
 $password = $_POST['password'];
 
-mysql_query("UPDATE user SET nip='$nip' , nama='$nama', jabatan='$jabatan', email='$email' , password='$password' WHERE id='$id'");
+mysqli_query($koneksi, "UPDATE user SET nip='$nip' , nama='$nama', jabatan='$jabatan', email='$email'  WHERE id='$id'");
 
 header("location:data-user.php?pesan=update");
 

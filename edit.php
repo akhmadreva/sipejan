@@ -21,7 +21,8 @@
 	<?php 
 	include "koneksi.php";
 	$id = $_GET['id'];
-	$query_mysql = mysql_query("SELECT * FROM user WHERE id='$id'")or die(mysql_error());
+	$koneksi = mysqli_connect ('localhost', 'root', '', 'hujan');
+	$query_mysql = mysql_query($koneksi,"SELECT * FROM user WHERE id='$id'")or die(mysql_error($koneksi));
 	$nomor = 1;
 	while($data = mysql_fetch_array($query_mysql)){
 	?>
@@ -39,8 +40,8 @@
 				<td><input type="text" name="jabatan" value="<?php echo $data['jabatan'] ?>"></td>					
 			</tr>	
 			<tr>
-				<td>Keterangan</td>
-				<td><input type="text" name="keterangan" value="<?php echo $data['keterangan'] ?>"></td>					
+				<td>Email</td>
+				<td><input type="text" name="email" value="<?php echo $data['email'] ?>"></td>					
 			</tr>	
 			<tr>
 				<td></td>
