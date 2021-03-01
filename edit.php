@@ -22,11 +22,11 @@
 	include "koneksi.php";
 	$id = $_GET['id'];
 	$koneksi = mysqli_connect ('localhost', 'root', '', 'hujan');
-	$query_mysql = mysql_query($koneksi,"SELECT * FROM user WHERE id='$id'")or die(mysql_error($koneksi));
+	$query_mysql = mysqli_query($koneksi,"SELECT * FROM user WHERE id='$id'")or die(mysqli_error($koneksi));
 	$nomor = 1;
-	while($data = mysql_fetch_array($query_mysql)){
+	while($data = mysqli_fetch_array($query_mysql)){
 	?>
-	<form action="update.php" method="post">		
+	<form action="update-user.php" method="post">		
 		<table>
 			<tr>
 				<td>Nama</td>
