@@ -73,7 +73,7 @@
                
                 if (!empty($date1) && !empty($date2)) {
                  // perintah tampil data berdasarkan range tanggal
-                 $sql = mysqli_query($conn, "SELECT * FROM hujan, hujanperjam WHERE hujanperjam.tanggal=hujan.tanggal BETWEEN '$date1' and '$date2'"); 
+                 $sql = mysqli_query($conn, "SELECT * FROM hujan, hujanperjam WHERE hujan.tanggal BETWEEN '$date1' and '$date2' WHERE hujanperjam.tanggal BETWEEN '$date1' and '$date2'"); 
                 } else {
                  // perintah tampil semua data
                  $sql = mysqli_query($conn, "SELECT * FROM data_hujan"); 

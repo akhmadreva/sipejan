@@ -80,7 +80,7 @@
 		</tr>
 		<?php 
 		include "koneksi.php";
-		$sql = "SELECT * FROM hujan, hujanperjam WHERE hujan.tanggal=hujanperjam.tanggal";
+		$sql = "SELECT * FROM hujan, hujanperjam WHERE hujan.id=hujanperjam.id";
         $hasil=mysqli_query($conn,$sql);
 		$nomor = 1;
 		while($data = mysqli_fetch_array($hasil)){
