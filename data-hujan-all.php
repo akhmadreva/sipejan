@@ -80,7 +80,7 @@
 		</tr>
 		<?php 
 		include "koneksi.php";
-		$sql = "SELECT * FROM hujan, hujanperjam WHERE hujan.id=hujanperjam.id";
+		$sql = "SELECT * FROM data_hujan WHERE tanggal";
         $hasil=mysqli_query($conn,$sql);
 		$nomor = 1;
 		while($data = mysqli_fetch_array($hasil)){
@@ -122,6 +122,7 @@
             <td><?php echo $data['empat']; ?></td>
             <td><?php echo $data['lima']; ?></td>
             <td><?php echo $data['enam']; ?></td>
+			<td><?php echo $query= "SELECT (tujuh+delapan+sembilan+sepuluh+sebelas+duabelas+tigabelas+empatbelas+limabelas+enambelas+tujuhbelas+delapanbelas+sembilanbelas+duapuluh+duasatu+duadua+duatiga+duaempat+satu+dua+tiga+empat+lima+enam) FROM data_hujan";?>
 			<td>
 				<a class="edit" href="edit.php?id=<?php echo $data['id']; ?>">Edit</a> |
 				<a class="hapus" href="hapus.php?id=<?php echo $data['id']; ?>">Hapus</a>					
