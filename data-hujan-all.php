@@ -40,7 +40,13 @@
 
 	<table border="1" class="table">
 		<tr>
-			<th>No</th>
+			<td>-</td>
+			<td colspan="10"><center>Jumlah pada masing-masing periode waktu (mm)</center></td>
+			<td rowspan="2">Tanggal</td>
+			<td colspan="24"><center>JUMLAH HUJAN TIAP JAM (MILIMETER)</center></td>
+			<td rowspan="2">Jumlah 24 Jam</td>
+		</tr>
+		<tr>
 			<th>Tanggal</th>
             <th>5 Menit</th>
 			<th>10 Menit</th>
@@ -80,24 +86,30 @@
 		</tr>
 		<?php 
 		include "koneksi.php";
-		$sql = "SELECT * FROM hujan, hujanperjam WHERE hujan.tanggal=hujanperjam.tanggal";
+		$sql = "SELECT * FROM data_hujan WHERE tanggal ORDER BY tanggal";
         $hasil=mysqli_query($conn,$sql);
 		$nomor = 1;
 		while($data = mysqli_fetch_array($hasil)){
 		?>
 		<tr>
-			<td><?php echo $nomor++; ?></td>
+			
+			<?php
+				$jumlah = $data['tujuh']+$data['delapan']+$data['sembilan']+$data['sepuluh']+$data['sebelas']+$data['duabelas']+$data['tigabelas']+$data['empatbelas']
+				+$data['limabelas']+$data['enambelas']+$data['tujuhbelas']+$data['delapanbelas']+$data['sembilanbelas']+$data['duapuluh']+$data['duasatu']+$data['duadua']
+				+$data['duatiga']+$data['duaempat']+$data['satu']+$data['dua']+$data['tiga']+$data['empat']+$data['lima']+$data['enam'];
+			?>
 			<td><?php echo date ( 'd F Y' , strtotime ($data['tanggal'])); ?></td>
-			<td><?php echo $data['lima']; ?></td>
-			<td><?php echo $data['sepuluh']; ?></td>
-			<td><?php echo $data['limabelas']; ?></td>
-			<td><?php echo $data['tigapuluh']; ?></td>
-			<td><?php echo $data['empatlima']; ?></td>
-			<td><?php echo $data['enampuluh']; ?></td>
+			<td><?php echo $data['lima_mnt']; ?></td>
+			<td><?php echo $data['sepuluh_mnt']; ?></td>
+			<td><?php echo $data['limabelas_mnt']; ?></td>
+			<td><?php echo $data['tigapuluh_mnt']; ?></td>
+			<td><?php echo $data['empatlima_mnt']; ?></td>
+			<td><?php echo $data['enampuluh_mnt']; ?></td>
 			<td><?php echo $data['seratusduapuluh']; ?></td>
-			<td><?php echo $data['tigajam']; ?></td>
-			<td><?php echo $data['enamjam']; ?></td>
-			<td><?php echo $data['duabelasjam']; ?></td>
+			<td><?php echo $data['tiga_jm']; ?></td>
+			<td><?php echo $data['enam_jm']; ?></td>
+			<td><?php echo $data['duabelas_jm']; ?></td>
+			<td><?php echo $nomor++; ?></td>
             <td><?php echo $data['tujuh']; ?></td>
             <td><?php echo $data['delapan']; ?></td>
             <td><?php echo $data['sembilan']; ?></td>
@@ -122,9 +134,10 @@
             <td><?php echo $data['empat']; ?></td>
             <td><?php echo $data['lima']; ?></td>
             <td><?php echo $data['enam']; ?></td>
+			<td><?php echo $jumlah;?> </td>
 			<td>
-				<a class="edit" href="edit.php?id=<?php echo $data['id']; ?>">Edit</a> |
-				<a class="hapus" href="hapus.php?id=<?php echo $data['id']; ?>">Hapus</a>					
+				<a class="edit" href="edit-data-hujan.php?id=<?php echo $data['id']; ?>">Edit</a> |
+				<a class="hapus" href="hapus-data-hujan.php?id=<?php echo $data['id']; ?>">Hapus</a>					
 			</td>
 		</tr>
 		<?php } ?>

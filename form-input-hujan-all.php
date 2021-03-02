@@ -34,29 +34,29 @@
 			</tr>
             <tr>
 				<td>5 Menit</td>
-				<td><input type="decimal" name="lima"></td>					
+				<td><input type="decimal" name="lima_mnt"></td>					
 				<td>10 Menit</td>
-				<td><input type="decimal" name="sepuluh"></td>					
+				<td><input type="decimal" name="sepuluh_mnt"></td>					
 				<td>15 Menit</td>
-				<td><input type="decimal" name="limabelas"></td>					
+				<td><input type="decimal" name="limabelas_mnt"></td>					
 				<td>30 Menit</td>
-				<td><input type="decimal" name="tigapuluh"></td>
+				<td><input type="decimal" name="tigapuluh_mnt"></td>
             </tr>
             <tr>					
 				<td>45 Menit</td>
-				<td><input type="decimal" name="empatlima"></td>					
+				<td><input type="decimal" name="empatlima_mnt"></td>					
 				<td>60 Menit</td>
-				<td><input type="decimal" name="enampuluh"></td>					
+				<td><input type="decimal" name="enampuluh_mnt"></td>					
 				<td>120 Menit</td>
 				<td><input type="decimal" name="seratusduapuluh"></td>					
 			</tr>
 			<tr>
 				<td>3 Jam</td>
-				<td><input type="decimal" name="tigajam"></td>					
+				<td><input type="decimal" name="tiga_jm"></td>					
 				<td>6 Jam</td>
-				<td><input type="decimal" name="enamjam"></td>					
+				<td><input type="decimal" name="enam_jm"></td>					
 				<td>12 Jam</td>
-				<td><input type="decimal" name="duabelasjam"></td>					
+				<td><input type="decimal" name="duabelas_jm"></td>					
 			</tr>
 			<tr>
 				<td>07-08</td>
