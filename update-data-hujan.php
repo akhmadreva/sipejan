@@ -1,5 +1,7 @@
-<?php
+<?php 
+
 include 'koneksi.php';
+$id = $_POST['id'];
 $tanggal = $_POST['tanggal'];
 $tanggal = date('Y-m-d', strtotime($tanggal));
 
@@ -37,13 +39,13 @@ $tiga = $_POST['tiga'];
 $empat = $_POST['empat'];
 $lima = $_POST['lima'];
 $enam = $_POST['enam'];
- 
-$sql = "INSERT INTO data_hujan VALUES('','$tanggal','$lima_mnt','$sepuluh_mnt','$limabelas_mnt','$tigapuluh_mnt'
-,'$empatlima_mnt','$enampuluh_mnt','$seratusduapuluh','$tiga_jm','$enam_jm','$duabelas_jm','$tujuh','$delapan','$sembilan','$sepuluh'
-,'$sebelas','$duabelas','$tigabelas','$empatbelas','$limabelas','$enambelas','$tujuhbelas','$delapanbelas'
-,'$sembilanbelas','$duapuluh','$duasatu','$duadua','$duatiga','$duaempat','$satu','$dua','$tiga'
-,'$empat','$lima','$enam')";
-mysqli_query($conn,$sql);
- 
-header("location:data-hujan-all.php?pesan=input");
+
+mysqli_query($conn, "UPDATE data_hujan SET tanggal='$tanggal', lima_mnt='$lima_mnt', sepuluh_mnt='$sepuluh_mnt', limabelas_mnt='$limabelas_mnt', tigapuluh_mnt='$tigapuluh_mnt'
+, empatlima_mnt='$empatlima_mnt', enampuluh_mnt='$enampuluh_mnt', seratusduapuluh='$seratusduapuluh', tiga_jm='$tiga_jm', enam_jm='$enam_jm', duabelas_jm='$duabelas_jm', tujuh='$tujuh', delapan='$delapan', sembilan='$sembilan', sepuluh='$sepuluh'
+, sebelas='$sebelas', duabelas='$duabelas', tigabelas='$tigabelas', empatbelas='$empatbelas', limabelas='$limabelas', enambelas='$enambelas', tujuhbelas='$tujuhbelas', delapanbelas='$delapanbelas'
+, sembilanbelas='$sembilanbelas', duapuluh='$duapuluh', duasatu='$duasatu', duadua='$duadua', duatiga='$duatiga', duaempat='$duaempat', satu='$satu', dua='$dua', tiga='$tiga'
+, empat='$empat', lima='$lima', enam='$enam' WHERE id='$id'");
+
+header("location:data-hujan-all.php?pesan=update");
+
 ?>

@@ -47,7 +47,7 @@
 			<td rowspan="2">Jumlah 24 Jam</td>
 		</tr>
 		<tr>
-			<th>No</th>
+			<th>Tanggal</th>
             <th>5 Menit</th>
 			<th>10 Menit</th>
 			<th>15 Menit</th>
@@ -136,8 +136,8 @@
             <td><?php echo $data['enam']; ?></td>
 			<td><?php echo $jumlah;?> </td>
 			<td>
-				<a class="edit" href="edit.php?id=<?php echo $data['id']; ?>">Edit</a> |
-				<a class="hapus" href="hapus.php?id=<?php echo $data['id']; ?>">Hapus</a>					
+				<a class="edit" href="edit-data-hujan.php?id=<?php echo $data['id']; ?>">Edit</a> |
+				<a class="hapus" href="hapus-data-hujan.php?id=<?php echo $data['id']; ?>">Hapus</a>					
 			</td>
 		</tr>
 		<?php } ?>
