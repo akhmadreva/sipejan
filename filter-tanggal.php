@@ -25,6 +25,7 @@
         <button type="submit" name="submit" class="btn btn-primary">Cari</button>
     </form>
     <br/>
+    <center><h4>PENAKAR HUJAN OTOMATIS/HELLMAN</h4></center>
     <table>
         <tr>
             <td>Nama Stasiun</td>
@@ -34,7 +35,7 @@
             <td>:</td>
             <td><?php
                 echo date  ( 'F' , strtotime ($_POST['date1']));
-                    $query = "SELECT * FROM data_hujan WHERE tanggal='".$_POST['date1']."'";
+                $query = "SELECT * FROM data_hujan WHERE tanggal='".$_POST['date1']."'";
                 ?></td>
             <td>Form</td>
             <td>:</td>
@@ -115,6 +116,7 @@
 			</tr>
 			<?php 
 			$no = 1;
+            $t=0;
             if (isset($_POST['submit'])) {
                 $date1 = $_POST['date1'];
                 $date2 = $_POST['date2'];
@@ -145,7 +147,7 @@
                 <td><?php echo $data['tiga_jm']; ?></td>
                 <td><?php echo $data['enam_jm']; ?></td>
                 <td><?php echo $data['duabelas_jm']; ?></td>
-                <td><?php echo $no++; ?></td>
+                <td><?php echo date ( 'd' , strtotime ($data['tanggal'])); ?></td>
                 <td><?php echo $data['tujuh']; ?></td>
                 <td><?php echo $data['delapan']; ?></td>
                 <td><?php echo $data['sembilan']; ?></td>
