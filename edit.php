@@ -49,7 +49,7 @@
 			</tr>	
 			<tr>
 				<td></td>
-				<td><input type="submit" value="Simpan"></td>					
+				<td><input type="submit" value="Update"></td>					
 			</tr>				
 		</table>
 	</form>

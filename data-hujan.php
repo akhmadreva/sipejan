@@ -91,7 +91,7 @@
             <td><?php echo $data['enam']; ?></td>
 			<td>
 				<a class="edit" href="edit.php?id=<?php echo $data['id']; ?>">Edit</a> |
-				<a class="hapus" href="hapus.php?id=<?php echo $data['id']; ?>">Hapus</a>					
+				<a class="hapus" href="hapus-data-perjam.php?id=<?php echo $data['id']; ?>">Hapus</a>					
 			</td>
 		</tr>
 		<?php } ?>
