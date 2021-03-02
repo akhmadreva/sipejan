@@ -62,8 +62,8 @@
 			<td><?php echo $data['enamjam']; ?></td>
 			<td><?php echo $data['duabelasjam']; ?></td>
 			<td>
-				<a class="edit" href="edit.php?id=<?php echo $data['id']; ?>">Edit</a> |
-				<a class="hapus" href="hapus.php?id=<?php echo $data['id']; ?>">Hapus</a>					
+				<a class="edit" href="edit-data-menit.php?id=<?php echo $data['id']; ?>">Edit</a> |
+				<a class="hapus" href="hapus-data-menit.php?id=<?php echo $data['id']; ?>">Hapus</a>					
 			</td>
 		</tr>
 		<?php } ?>
